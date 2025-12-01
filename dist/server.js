@@ -13,7 +13,7 @@ const app = express();
 connectDB();
 app.use(helmet());
 app.use(cors({
-    origin: "*",
+    origin: "https://swapverse-dc1v7bkts-rahulpreethamsais-projects.vercel.app",
     credentials: true
 }));
 app.use(express.json());
