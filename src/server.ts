@@ -15,9 +15,12 @@ const app = express();
 connectDB();
 
 app.use(helmet());
-app.use(cors(
-    {origin: 'http://localhost:5173'}
-));
+
+app.use(cors({
+  origin: "*",
+  credentials: true
+}));
+
 app.use(express.json());
 
 const limiter = rateLimit({
