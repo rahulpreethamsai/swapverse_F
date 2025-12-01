@@ -10,7 +10,7 @@ export interface IItem extends Document {
     status: "available" | "swapped" | "underReview";
 }
 declare const _default: import("mongoose").Model<IItem, {}, {}, {}, Document<unknown, {}, IItem, {}, {}> & IItem & Required<{
-    _id: unknown;
+    _id: Types.ObjectId;
 }> & {
     __v: number;
 }, any>;

@@ -1,4 +1,4 @@
-import mongoose, { Document } from "mongoose";
+import mongoose, { Document, Types } from "mongoose";
 export interface IReview extends Document {
     swapId: mongoose.Types.ObjectId;
     fromUserId: mongoose.Types.ObjectId;
@@ -7,7 +7,7 @@ export interface IReview extends Document {
     comment?: string;
 }
 declare const _default: mongoose.Model<IReview, {}, {}, {}, mongoose.Document<unknown, {}, IReview, {}, {}> & IReview & Required<{
-    _id: unknown;
+    _id: Types.ObjectId;
 }> & {
     __v: number;
 }, any>;

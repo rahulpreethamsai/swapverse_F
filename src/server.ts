@@ -1,5 +1,5 @@
 import express from 'express';
-import dotenv from 'dotenv';
+import 'dotenv/config';
 import cors from 'cors';
 import { connectDB } from './config/db.js';
 import authRouter from './routes/authRoute.js';
@@ -11,7 +11,6 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 
 const app = express();
-dotenv.config();
 
 connectDB();
 

@@ -19,7 +19,7 @@ export interface IUser extends Document {
     badges: string[];
 }
 declare const _default: import("mongoose").Model<IUser, {}, {}, {}, Document<unknown, {}, IUser, {}, {}> & IUser & Required<{
-    _id: unknown;
+    _id: import("mongoose").Types.ObjectId;
 }> & {
     __v: number;
 }, any>;

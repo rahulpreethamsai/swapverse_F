@@ -1,4 +1,4 @@
-import mongoose, { Document } from "mongoose";
+import mongoose, { Document, Types } from "mongoose";
 export interface ISwap extends Document {
     fromUserId: mongoose.Types.ObjectId;
     toUserId: mongoose.Types.ObjectId;
@@ -20,7 +20,7 @@ export interface ISwap extends Document {
     }[];
 }
 declare const _default: mongoose.Model<ISwap, {}, {}, {}, mongoose.Document<unknown, {}, ISwap, {}, {}> & ISwap & Required<{
-    _id: unknown;
+    _id: Types.ObjectId;
 }> & {
     __v: number;
 }, any>;

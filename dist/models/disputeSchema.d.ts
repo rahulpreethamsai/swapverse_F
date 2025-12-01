@@ -1,4 +1,4 @@
-import mongoose, { Document } from "mongoose";
+import mongoose, { Document, Types } from "mongoose";
 export interface IDispute extends Document {
     swapId: mongoose.Types.ObjectId;
     raisedBy: mongoose.Types.ObjectId;
@@ -9,7 +9,7 @@ export interface IDispute extends Document {
     resolvedAt: Date;
 }
 declare const _default: mongoose.Model<IDispute, {}, {}, {}, mongoose.Document<unknown, {}, IDispute, {}, {}> & IDispute & Required<{
-    _id: unknown;
+    _id: Types.ObjectId;
 }> & {
     __v: number;
 }, any>;
