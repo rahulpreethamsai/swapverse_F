@@ -5,7 +5,7 @@ import { requireRole } from "../middlewares/roleCheck.js";
 
 const disputeRouter = Router();
 
-disputeRouter.post('/:swapId', isAuth , raiseDispute);
+disputeRouter.post('/', isAuth , raiseDispute);
 disputeRouter.get('/admin', isAuth, requireRole("admin") ,getAllDisputes);
 disputeRouter.post('/admin/:id/resolve', isAuth, requireRole("admin") , resolveDispute);
 

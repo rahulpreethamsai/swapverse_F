@@ -1,10 +1,9 @@
 import Dispute from "../models/disputeSchema.js";
 export async function raiseDispute(req, res) {
     try {
-        const swapId = req.params.swapId;
-        const { evidence } = req.body;
-        if (!evidence || evidence.length === 0) {
-            return res.status(400).json({ message: "Evidence is required" });
+        const { swapId, evidence } = req.body;
+        if (!swapId) {
+            return res.status(400).json({ message: "swapId is required" });
         }
         const dispute = await Dispute.create({
             swapId,
@@ -14,6 +13,7 @@ export async function raiseDispute(req, res) {
         res.status(201).json(dispute);
     }
     catch (error) {
+        console.error(error);
         res.status(500).json({ message: "Error raising dispute", error });
     }
 }
