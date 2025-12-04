@@ -39,9 +39,9 @@ app.use('/api/items', itemRouter);
 
 app.use('/api/swaps', swapRouter);
 
-app.use('/api/review', reviewRouter);
+app.use('/api/reviews', reviewRouter);
 
-app.use('/api/dispute', disputeRouter);
+app.use('/api/disputes', disputeRouter);
 
 
 const port = process.env.PORT || 5001;
