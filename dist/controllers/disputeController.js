@@ -7,12 +7,13 @@ export async function raiseDispute(req, res) {
         }
         const dispute = await Dispute.create({
             swapId,
-            raisedBy: req.user._id,
+            raisedBy: req.user._id || req.user.id,
             evidence,
         });
         res.status(201).json(dispute);
     }
     catch (error) {
+        console.log("DISPUTE ERROR:", error);
         console.error(error);
         res.status(500).json({ message: "Error raising dispute", error });
     }
